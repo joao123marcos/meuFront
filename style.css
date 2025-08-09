@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*Um maneira de escrever*/
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  /*Outra maneira de escrever porém de modo mais enxuto seria
+    
+    background: color image, repeat position/size*/
+
+  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+}
+/*Propriedades de algumas tags em html
+ div= display é block (usa toda a largura da tela e joga os elementros próximos para baixo
+ img = display é inline e com isso margin= auto não funciona, pode-se transformar o display
+ para block e aí sim vai funcionar. Posso também pegar o pai da img e usar a propriedade
+ text-align e aí mover essa tag pra onde quiser (center, right ou left)*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 122px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
