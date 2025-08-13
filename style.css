@@ -25,7 +25,8 @@ body * {
 
 #container {
   width: 360px;
-  margin: 56px auto 0px;
+  margin: 40px auto 0px;
+  padding: 0 24px;
 }
 /*Propriedades de algumas tags em html
  div= display é block (usa toda a largura da tela e joga os elementros próximos para baixo
@@ -35,15 +36,75 @@ body * {
 
 #profile {
   text-align: center;
-  padding: 24px;
+  padding: 10px;
 }
 
 #profile img {
-  width: 122px;
+  width: 110px;
 }
 
 #profile p {
-  font-weight: 500;
+  font-weight: 600;
   line-height: 24px;
-  margin-top: 8px;
+  margin-top: 3px;
+}
+
+/*lista*/
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 19px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur (4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 400;
+
+  transition: background-color 0.9s;
+}
+
+ul li a:hover {
+  background-color: rgba(163, 162, 162, 0.05);
+  border: 1.5px solid white;
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 1px 0;
+
+  font-size: 22px;
+  transition: background-color 0.2s;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+#social-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+footer{
+  display: flex;
+  padding: 56px;
+  font-size: 14px;
+  justify-content: center;
 }
