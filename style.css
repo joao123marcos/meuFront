@@ -4,23 +4,43 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: #ffffffff;
+  --bg-mobile: url(./assets/bg-mobile.jpg);
+  --strock-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(181, 178, 178, 0.5);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-br-url: url(./assets/MoonStars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-mobile: url(./assets/bg-mobile-light.jpg);
+  --strock-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-br-url: url(./assets/Sun.svg);
+}
+
 body {
-  /*Um maneira de escrever*/
+  /*Um maneira de escrever
   background-image: url(./assets/bg-mobile.jpg);
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: cover;
+  background-size: cover;*/
 
   /*Outra maneira de escrever porém de modo mais enxuto seria
     
     background: color image, repeat position/size*/
 
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-mobile) no-repeat top center/cover;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 #container {
@@ -34,6 +54,7 @@ body * {
  para block e aí sim vai funcionar. Posso também pegar o pai da img e usar a propriedade
  text-align e aí mover essa tag pra onde quiser (center, right ou left)*/
 
+/*profile*/
 #profile {
   text-align: center;
   padding: 10px;
@@ -47,6 +68,43 @@ body * {
   font-weight: 600;
   line-height: 24px;
   margin-top: 3px;
+}
+
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: white var(--switch-br-url) no-repeat center;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  left: 0;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--strock-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 999px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
 }
 
 /*lista*/
@@ -65,8 +123,8 @@ ul li a {
   justify-content: center;
   padding: 8px 19px;
 
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: var(--surface-color);
+  border: 1px solid var(--strock-color);
   border-radius: 8px;
   backdrop-filter: blur (4px);
   -webkit-backdrop-filter: blur(4px);
@@ -77,8 +135,8 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: rgba(163, 162, 162, 0.05);
-  border: 1.5px solid white;
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
 }
 
 #social-links {
@@ -99,10 +157,10 @@ ul li a:hover {
 }
 
 #social-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--highlight-color);
 }
 
-footer{
+footer {
   display: flex;
   padding: 56px;
   font-size: 14px;
